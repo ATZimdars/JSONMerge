@@ -1,3 +1,5 @@
+//Requires org.json and org.json.simple libraries
+
 import java.io.*;
 import java.util.*;
 import java.io.FileReader;
@@ -37,24 +39,9 @@ public class JsonMerge
 						JSONObject theID = ids.getJSONObject(b);
 						String finall = theID.getString("id");
 						System.out.println("Image Number: " + finall);
-						JSONArray tags = theID.getJSONArray("tags");
-						for (int c = 0; c < tags.length(); c++)
-						{
-							String tagss = tags.getString(c);
-							System.out.println("Tags: " + tagss);
-						}
-						JSONObject user = theID.getJSONObject("user");
-						System.out.println("User: " + user);
-						JSONObject comments = theID.getJSONObject("comments");
-						System.out.println("Comments: "+ comments);
-						JSONObject location = theID.getJSONObject("location");
-						System.out.println("Location: " + location);
-								
-					}
-					
+						File indexFile = new File(""+ finall);	
+					}	
 				}
-					
-	
 			}
 			catch (Exception e)
 			{
